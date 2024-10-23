@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 5555;
 // routes
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/user");
+const taskRoute = require("./routes/task");
 
 mongoose
   .connect(process.env.MONGO_URL)
@@ -23,6 +24,7 @@ app.use(express.json());
 // use routers
 app.use(authRoute);
 app.use(userRoute);
+app.use(taskRoute);
 
 app.listen(PORT, () => {
   console.log(`running on port ${PORT}`);
